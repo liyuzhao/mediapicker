@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +48,7 @@ public class PickerActivity extends Activity implements DataCallback, View.OnCli
     Intent argsIntent;
     RecyclerView recyclerView;
     Button done, category_btn, preview;
+    CheckBox rbFullSize;
     MediaGridAdapter gridAdapter;
     ListPopupWindow mFolderPopupWindow;
     private FolderAdapter mFolderAdapter;
@@ -61,9 +64,13 @@ public class PickerActivity extends Activity implements DataCallback, View.OnCli
         done = (Button) findViewById(R.id.done);
         category_btn = (Button) findViewById(R.id.category_btn);
         preview = (Button) findViewById(R.id.preview);
+        rbFullSize = findViewById(R.id.rb_full_size);
         done.setOnClickListener(this);
         category_btn.setOnClickListener(this);
         preview.setOnClickListener(this);
+
+        boolean isShowFullSize = argsIntent.getBooleanExtra(PickerConfig.DEFAULT_SHOW_FULL_SIZE, false);
+        rbFullSize.setVisibility(isShowFullSize ? View.VISIBLE : View.GONE);
         //get view end
         createAdapter();
         createFolderAdapter();
@@ -187,6 +194,7 @@ public class PickerActivity extends Activity implements DataCallback, View.OnCli
     public void done(ArrayList<Media> selects) {
         Intent intent = new Intent();
         intent.putParcelableArrayListExtra(PickerConfig.EXTRA_RESULT, selects);
+        intent.putExtra(PickerConfig.EXTRA_RESULT_FULL_SIZE, rbFullSize.isChecked());
         setResult(PickerConfig.RESULT_CODE, intent);
         finish();
     }

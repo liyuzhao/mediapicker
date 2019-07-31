@@ -31,9 +31,20 @@ public class PickerConfig {
      */
     public static final String EXTRA_RESULT = "select_result";
     /**
+     * 选择结果，返回是否选中 发送原图
+     */
+    public static final String EXTRA_RESULT_FULL_SIZE = "select_result_fullsize";
+
+    /**
      * 默认选择集
      */
     public static final String DEFAULT_SELECTED_LIST = "default_list";
+
+    /**
+     * 是否显示原图
+     */
+    public static final String DEFAULT_SHOW_FULL_SIZE = "show_full_size";
+
     /**
      * 预览集
      */
