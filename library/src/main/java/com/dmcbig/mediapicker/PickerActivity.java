@@ -69,7 +69,7 @@ public class PickerActivity extends Activity implements DataCallback, View.OnCli
         category_btn.setOnClickListener(this);
         preview.setOnClickListener(this);
 
-        boolean isShowFullSize = argsIntent.getBooleanExtra(PickerConfig.DEFAULT_SHOW_FULL_SIZE, false);
+        boolean isShowFullSize = argsIntent.getBooleanExtra(PickerConfig.SHOW_FULL_SIZE, false);
         rbFullSize.setVisibility(isShowFullSize ? View.VISIBLE : View.GONE);
         //get view end
         createAdapter();

@@ -11,6 +11,10 @@ public class PickerConfig {
      * 最大图片选择次数，int类型，默认40
      */
     public static final String MAX_SELECT_COUNT = "max_select_count";
+    /**
+     * 是否显示原图
+     */
+    public static final String SHOW_FULL_SIZE = "show_full_size";
 
     public static final int DEFAULT_SELECTED_MAX_COUNT = 40;
 
@@ -40,10 +44,7 @@ public class PickerConfig {
      */
     public static final String DEFAULT_SELECTED_LIST = "default_list";
 
-    /**
-     * 是否显示原图
-     */
-    public static final String DEFAULT_SHOW_FULL_SIZE = "show_full_size";
+
 
     /**
      * 预览集
