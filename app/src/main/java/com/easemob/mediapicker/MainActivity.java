@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 		long maxSize = 10485760L;
 		intent.putExtra(PickerConfig.MAX_SELECT_SIZE,maxSize); //default 10MB (Optional)
 		intent.putExtra(PickerConfig.MAX_SELECT_COUNT,9);  //default 40 (Optional)
-		intent.putExtra(PickerConfig.DEFAULT_SHOW_FULL_SIZE, true);
+		intent.putExtra(PickerConfig.SHOW_FULL_SIZE, true);
 //        intent.putExtra(PickerConfig.DEFAULT_SELECTED_LIST,defaultSelect); //(Optional)默认选中的照片
 		startActivityForResult(intent, REQUEST_CODE_LOCAL);
 	}
